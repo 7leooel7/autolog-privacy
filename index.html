@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <title>Política de Privacidade — AutoLog</title>
+  <meta name="description" content="Política de Privacidade do AutoLog — aplicativo de controle de veículos, combustível e serviços." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --amber:       #F59E0B;
+      --amber-dim:   #D97706;
+      --bg:          #0A0A0A;
+      --surface:     #111111;
+      --surface2:    #1A1A1A;
+      --border:      rgba(255,255,255,0.08);
+      --text:        #F5F5F5;
+      --text-muted:  #888888;
+      --text-sub:    #AAAAAA;
+      --radius:      16px;
+      --radius-sm:   10px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg:         #F5F5F5;
+        --surface:    #FFFFFF;
+        --surface2:   #F0F0F0;
+        --border:     rgba(0,0,0,0.09);
+        --text:       #111111;
+        --text-muted: #666666;
+        --text-sub:   #444444;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Manrope', system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ───────────────────────────────────────────────── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── Header ───────────────────────────────────────────────── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 0 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .app-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      flex-shrink: 0;
+    }
+
+    .header-text h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .header-text p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .page-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.75rem, 5vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      line-height: 1.15;
+    }
+
+    .page-title span {
+      color: var(--amber);
+    }
+
+    .update-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.85rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .update-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+
+    /* ── Intro ────────────────────────────────────────────────── */
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--amber);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      color: var(--text-sub);
+      font-size: 0.9rem;
+    }
+
+    .intro-card strong {
+      color: var(--text);
+    }
+
+    /* ── Sections ─────────────────────────────────────────────── */
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.6rem;
+    }
+
+    .section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .card-body {
+      padding: 1.25rem 1.5rem;
+    }
+
+    .card-body p + p {
+      margin-top: 0.75rem;
+    }
+
+    .card-body p {
+      color: var(--text-sub);
+      font-size: 0.875rem;
+    }
+
+    /* ── Item rows ────────────────────────────────────────────── */
+    .item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .item-row:last-child {
+      border-bottom: none;
+    }
+
+    .item-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+
+    .item-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .item-content strong {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+
+    .item-content span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── Pill tags ────────────────────────────────────────────── */
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-sub);
+    }
+
+    .tag.amber {
+      background: rgba(245,158,11,0.1);
+      border-color: rgba(245,158,11,0.25);
+      color: var(--amber);
+    }
+
+    /* ── Highlight box ────────────────────────────────────────── */
+    .highlight-box {
+      background: rgba(245,158,11,0.06);
+      border: 1px solid rgba(245,158,11,0.2);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      line-height: 1.55;
+    }
+
+    .highlight-box strong {
+      color: var(--amber);
+    }
+
+    /* ── "No data" badge ─────────────────────────────────────── */
+    .no-data {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #4ADE80;
+      background: rgba(74,222,128,0.08);
+      border: 1px solid rgba(74,222,128,0.2);
+      border-radius: 999px;
+      padding: 0.2rem 0.6rem;
+    }
+
+    /* ── Rights grid ─────────────────────────────────────────── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .rights-item {
+      background: var(--surface);
+      padding: 1rem 1.5rem;
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+
+    .rights-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .rights-item strong {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .rights-item p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── Footer ───────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding: 2rem 0 3rem;
+      text-align: center;
+    }
+
+    footer .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    footer .footer-logo span {
+      color: var(--amber);
+    }
+
+    footer p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: var(--amber);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Back-to-top button ──────────────────────────────────── */
+    #back-to-top {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--amber);
+      color: #000;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(245,158,11,0.35);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+      transform: translateY(8px);
+      z-index: 99;
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    #back-to-top svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* ── Contact section ─────────────────────────────────────── */
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--amber);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      .header-text h1 { font-size: 1.25rem; }
+      .item-row { padding: 0.9rem 1.1rem; }
+      .card-body { padding: 1rem 1.1rem; }
+      .rights-item { padding: 0.9rem 1.1rem; }
+      #back-to-top { bottom: 1rem; right: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ──────────────────────────────────────────────── -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <img src="./icon.png" alt="AutoLog" class="app-logo" />
+        <div class="header-text">
+          <h1>AutoLog</h1>
+          <p>Seu carro. Seu histórico. Seu controle.</p>
+        </div>
+      </div>
+
+      <h1 class="page-title">Política de<br /><span>Privacidade</span></h1>
+
+      <div class="update-badge">
+        <span class="dot"></span>
+        Última atualização: 05 de abril de 2026 · Versão 1.0.0
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ── Intro ───────────────────────────────────────────────── -->
+    <div class="intro-card">
+      <strong>AutoLog foi projetado com privacidade em primeiro lugar.</strong>
+      Todos os seus dados ficam armazenados exclusivamente no seu dispositivo.
+      Não coletamos, não vendemos e não acessamos suas informações pessoais.
+    </div>
+
+    <!-- ── 1. Quem Somos ──────────────────────────────────────── -->
+    <section class="section" id="quem-somos">
+      <p class="section-label">Seção 1</p>
+      <h2>Quem Somos</h2>
+      <div class="card">
+        <div class="card-body">
+          <p>
+            O <strong>AutoLog</strong> é um aplicativo independente desenvolvido por
+            <strong>Leonardo Lourenço</strong>, disponível para Android na Google Play Store.
+          </p>
+          <p>
+            O aplicativo tem como finalidade exclusiva ajudar o usuário a registrar e controlar
+            o histórico de seus veículos — abastecimentos, serviços, manutenções e compras — de
+            forma totalmente privada e offline.
+          </p>
+          <p>
+            <strong>Identificador do aplicativo:</strong> <code>com.autolog.app</code>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 2. Dados Coletados ─────────────────────────────────── -->
+    <section class="section" id="dados-coletados">
+      <p class="section-label">Seção 2</p>
+      <h2>Dados que Coletamos</h2>
+
+      <div class="card" style="margin-bottom: 0.75rem;">
+        <div class="item-row">
+          <div class="item-icon">🚗</div>
+          <div class="item-content">
+            <strong>Dados inseridos pelo usuário</strong>
+            <span>Todas as informações são fornecidas voluntariamente pelo próprio usuário para uso do app.</span>
+            <div class="tag-list">
+              <span class="tag">Veículos</span>
+              <span class="tag">Abastecimentos</span>
+              <span class="tag">Serviços</span>
+              <span class="tag">Compras</span>
+              <span class="tag">Categorias</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-icon">📊</div>
+          <div class="item-content">
+            <strong>Analytics, rastreamento e publicidade</strong>
+            <span>
+              <span class="no-data">✓ Nenhum</span>
+              &nbsp;Não utilizamos qualquer ferramenta de analytics, rastreamento de comportamento, publicidade ou telemetria.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 3. Armazenamento ───────────────────────────────────── -->
+    <section class="section" id="armazenamento">
+      <p class="section-label">Seção 3</p>
+      <h2>Como Seus Dados São Armazenados</h2>
+
+      <div class="card">
+        <div class="item-row">
+          <div class="item-icon">📱</div>
+          <div class="item-content">
+            <strong>Armazenamento local (padrão)</strong>
+            <span>
+              Todos os dados do app (veículos, abastecimentos, serviços, etc.) são gravados
+              exclusivamente no banco de dados local do seu dispositivo (SQLite).
+              Nenhum dado é enviado a servidores externos.
+            </span>
+          </div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-icon">☁️</div>
+          <div class="item-content">
+            <strong>Backup opcional no Google Drive</strong>
+            <span>
+              Se você optar por ativar o backup, os dados são enviados para a pasta privada
+              <code>appDataFolder</code> da sua própria conta Google Drive.
+              Essa pasta é invisível para outros aplicativos e acessível apenas pelo AutoLog
+              e por você diretamente nas configurações do Google.
+            </span>
+            <div class="highlight-box">
+              <strong>Importante:</strong> Leonardo Lourenço (desenvolvedor) não tem acesso
+              ao conteúdo do seu Google Drive. Os dados vão diretamente da sua conta para
+              a sua pasta — não passam por nenhum servidor intermediário.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── 4. Compartilhamento ────────────────────────────────── -->
+    <section class="section" id="compartilhamento">
+      <p class="section-label">Seção 4</p>
+      <h2>Compartilhamento de Dados</h2>
+
+      <div class="card">
+        <div class="card-body">
+          <p>
+            <strong>Não compartilhamos, vendemos, alugamos ou monetizamos seus dados de nenhuma forma.</strong>
+          </p>
+          <p>
+            Os seus dados pessoais não são transmitidos a terceiros, parceiros, anunciantes
+            ou qualquer outra parte. O AutoLog não exibe publicidade e não possui integrações
+            com plataformas de marketing ou rastreamento.
+          </p>
+          <p>
+            A única transferência de dados que ocorre é o backup opcional para o seu próprio
+            Google Drive (descrito na Seção 3), iniciado exclusivamente pelo usuário.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 6. Seus Direitos ───────────────────────────────────── -->
+    <section class="section" id="direitos">
+      <p class="section-label">Seção 5</p>
+      <h2>Seus Direitos</h2>
+
+      <div class="card">
+        <div class="rights-grid">
+
+          <div class="rights-item">
+            <span class="rights-icon">📤</span>
+            <div>
+              <strong>Exportar seus dados</strong>
+              <p>Exporte todo o seu histórico em formato PDF ou Excel diretamente pelo app, a qualquer momento, sem precisar de conexão com a internet.</p>
+            </div>
+          </div>
+
+          <div class="rights-item">
+            <span class="rights-icon">🗑️</span>
+            <div>
+              <strong>Excluir seus dados</strong>
+              <p>Apague veículos, registros individuais ou todos os dados de uma vez nas Configurações do app. Desinstalar o app também remove todos os dados locais.</p>
+            </div>
+          </div>
+
+          <div class="rights-item">
+            <span class="rights-icon">🔌</span>
+            <div>
+              <strong>Revogar acesso ao Google Drive</strong>
+              <p>Desconecte o backup do Google Drive a qualquer momento em Configurações → Backup. Você também pode revogar o acesso diretamente em <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style="color: var(--amber);">myaccount.google.com/permissions</a>.</p>
+            </div>
+          </div>
+
+          <div class="rights-item">
+            <span class="rights-icon">📩</span>
+            <div>
+              <strong>Suporte</strong>
+              <p>Como todos os dados são armazenados exclusivamente no seu dispositivo, a exclusão é feita diretamente pelo app em <strong>Configurações → Zona de Perigo.</strong> O desenvolvedor não tem acesso aos seus dados.</p>
+              <p style="margin-top:0.5rem">Para dúvidas ou suporte sobre o funcionamento do app, responderemos em até 5 dias úteis.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 7. Menores ─────────────────────────────────────────── -->
+    <section class="section" id="menores">
+      <p class="section-label">Seção 6</p>
+      <h2>Crianças e Menores de Idade</h2>
+
+      <div class="card">
+        <div class="card-body">
+          <p>
+            O AutoLog <strong>não é destinado a crianças menores de 13 anos</strong> e não coleta
+            intencionalmente dados pessoais de menores de idade.
+          </p>
+          <p>
+            Como todos os dados ficam exclusivamente no dispositivo, nenhuma informação é transmitida
+            ao desenvolvedor. Caso o app tenha sido instalado por um menor, basta desinstalar o
+            aplicativo para remover todos os dados.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 8. Alterações ──────────────────────────────────────── -->
+    <section class="section" id="alteracoes">
+      <p class="section-label">Seção 7</p>
+      <h2>Alterações nesta Política</h2>
+
+      <div class="card">
+        <div class="card-body">
+          <p>
+            Podemos atualizar esta Política de Privacidade periodicamente. Alterações relevantes
+            serão comunicadas por meio das notas de atualização do app na Google Play Store.
+          </p>
+          <p>
+            A versão mais recente estará sempre disponível em
+            <strong>leonardolourenco.github.io/autolog-privacy</strong>. A data de vigência da versão atual está
+            indicada no topo desta página.
+          </p>
+          <p>
+            O uso continuado do aplicativo após a publicação de alterações implica a aceitação
+            da política atualizada. Caso não concorde com as alterações, você pode excluir
+            seus dados e desinstalar o aplicativo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 9. Contato ─────────────────────────────────────────── -->
+    <section class="section" id="contato">
+      <p class="section-label">Seção 8</p>
+      <h2>Contato</h2>
+
+      <div class="card">
+        <div class="item-row">
+          <div class="item-icon">✉️</div>
+          <div class="item-content">
+            <strong>E-mail de suporte</strong>
+            <span>
+              Para dúvidas ou suporte sobre o funcionamento do app, entre em contato:
+            </span>
+            <div style="margin-top: 0.6rem;">
+              <a href="mailto:support.autolog@gmail.com" class="contact-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                support.autolog@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-icon">👤</div>
+          <div class="item-content">
+            <strong>Responsável</strong>
+            <span>Leonardo Lourenço — Desenvolvedor independente</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ────────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">Auto<span>Log</span></div>
+      <p>
+        Seu carro. Seu histórico. Seu controle.<br />
+        Versão 1.0.0 &nbsp;·&nbsp; Última atualização: 05 de abril de 2026
+      </p>
+      <p style="margin-top: 0.5rem;">
+        © 2026 Leonardo Lourenço &nbsp;·&nbsp;
+        <a href="mailto:support.autolog@gmail.com">support.autolog@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ── Back to top ────────────────────────────────────────────── -->
+  <button id="back-to-top" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script>
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.scrollY > 300);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
