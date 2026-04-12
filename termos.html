@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
-  <title>Política de Privacidade — AutoLog</title>
-  <meta name="description" content="Política de Privacidade do AutoLog — aplicativo de controle de veículos, combustível e serviços." />
+  <title>Termos de Uso — AutoLog</title>
+  <meta name="description" content="Termos de Uso do AutoLog — aplicativo de controle de veículos, combustível e serviços." />
   <link rel="icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -230,30 +230,6 @@
       line-height: 1.5;
     }
 
-    /* ── Pill tags ────────────────────────────────────────────── */
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.6rem;
-    }
-
-    .tag {
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      color: var(--text-sub);
-    }
-
-    .tag.amber {
-      background: rgba(245,158,11,0.1);
-      border-color: rgba(245,158,11,0.25);
-      color: var(--amber);
-    }
-
     /* ── Highlight box ────────────────────────────────────────── */
     .highlight-box {
       background: rgba(245,158,11,0.06);
@@ -268,20 +244,6 @@
 
     .highlight-box strong {
       color: var(--amber);
-    }
-
-    /* ── "No data" badge ─────────────────────────────────────── */
-    .no-data {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #4ADE80;
-      background: rgba(74,222,128,0.08);
-      border: 1px solid rgba(74,222,128,0.2);
-      border-radius: 999px;
-      padding: 0.2rem 0.6rem;
     }
 
     /* ── Rights grid ─────────────────────────────────────────── */
@@ -390,7 +352,7 @@
       height: 18px;
     }
 
-    /* ── Contact section ─────────────────────────────────────── */
+    /* ── Contact link ────────────────────────────────────────── */
     .contact-link {
       display: inline-flex;
       align-items: center;
@@ -404,6 +366,21 @@
 
     .contact-link:hover {
       text-decoration: underline;
+    }
+
+    /* ── Nav link ────────────────────────────────────────────── */
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .nav-link:hover {
+      color: var(--amber);
     }
 
     /* ── Responsive ──────────────────────────────────────────── */
@@ -429,12 +406,17 @@
         </div>
       </div>
 
-      <h1 class="page-title">Política de<br /><span>Privacidade</span></h1>
+      <h1 class="page-title">Termos de<br /><span>Uso</span></h1>
 
       <div class="update-badge">
         <span class="dot"></span>
-        Última atualização: 05 de abril de 2026
+        Última atualização: 11 de abril de 2026
       </div>
+
+      <br />
+      <a href="./index.html" class="nav-link">
+        ← Ver Política de Privacidade
+      </a>
     </div>
   </header>
 
@@ -442,167 +424,109 @@
 
     <!-- ── Intro ───────────────────────────────────────────────── -->
     <div class="intro-card">
-      <strong>AutoLog foi projetado com privacidade em primeiro lugar.</strong>
-      Todos os seus dados ficam armazenados exclusivamente no seu dispositivo.
-      Não coletamos, não vendemos e não acessamos suas informações pessoais.
+      <strong>Ao instalar ou utilizar o AutoLog, você concorda com estes Termos de Uso.</strong>
+      Se não concordar com algum ponto, por favor não utilize o aplicativo.
     </div>
 
-    <!-- ── 1. Quem Somos ──────────────────────────────────────── -->
-    <section class="section" id="quem-somos">
+    <!-- ── 1. O que é o AutoLog ──────────────────────────────── -->
+    <section class="section" id="o-que-e">
       <p class="section-label">Seção 1</p>
-      <h2>Quem Somos</h2>
+      <h2>O que é o AutoLog</h2>
       <div class="card">
         <div class="card-body">
           <p>
-            O <strong>AutoLog</strong> é um aplicativo independente desenvolvido por
-            <strong>Leonardo Lourenço</strong>, disponível para Android na Google Play Store.
+            O <strong>AutoLog</strong> é um aplicativo de gestão de veículos pessoais que permite
+            registrar abastecimentos, serviços, compras e lembretes de manutenção.
           </p>
           <p>
-            O aplicativo tem como finalidade exclusiva ajudar o usuário a registrar e controlar
-            o histórico de seus veículos — abastecimentos, serviços, manutenções e compras — de
-            forma totalmente privada e offline.
-          </p>
-          <p>
-            <strong>Identificador do aplicativo:</strong> <code>com.autolog.app</code>
+            As informações inseridas são de caráter pessoal e informativo —
+            <strong>não constituem aconselhamento mecânico, financeiro ou jurídico.</strong>
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ── 2. Dados Coletados ─────────────────────────────────── -->
-    <section class="section" id="dados-coletados">
+    <!-- ── 2. Seus Dados ─────────────────────────────────────── -->
+    <section class="section" id="seus-dados">
       <p class="section-label">Seção 2</p>
-      <h2>Dados que Coletamos</h2>
-
-      <div class="card" style="margin-bottom: 0.75rem;">
-        <div class="item-row">
-          <div class="item-icon">🚗</div>
-          <div class="item-content">
-            <strong>Dados inseridos pelo usuário</strong>
-            <span>Todas as informações são fornecidas voluntariamente pelo próprio usuário para uso do app.</span>
-            <div class="tag-list">
-              <span class="tag">Veículos</span>
-              <span class="tag">Abastecimentos</span>
-              <span class="tag">Serviços</span>
-              <span class="tag">Compras</span>
-              <span class="tag">Categorias</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-row">
-          <div class="item-icon">📊</div>
-          <div class="item-content">
-            <strong>Analytics, rastreamento e publicidade</strong>
-            <span>
-              <span class="no-data">✓ Nenhum</span>
-              &nbsp;Não utilizamos qualquer ferramenta de analytics, rastreamento de comportamento, publicidade ou telemetria.
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── 3. Armazenamento ───────────────────────────────────── -->
-    <section class="section" id="armazenamento">
-      <p class="section-label">Seção 3</p>
-      <h2>Como Seus Dados São Armazenados</h2>
+      <h2>Seus Dados</h2>
 
       <div class="card">
         <div class="item-row">
           <div class="item-icon">📱</div>
           <div class="item-content">
-            <strong>Armazenamento local (padrão)</strong>
-            <span>
-              Todos os dados do app (veículos, abastecimentos, serviços, etc.) são gravados
-              exclusivamente no banco de dados local do seu dispositivo (SQLite).
-              Nenhum dado é enviado a servidores externos.
-            </span>
+            <strong>Armazenamento local</strong>
+            <span>Os dados inseridos no app ficam armazenados exclusivamente no seu dispositivo.</span>
           </div>
         </div>
 
         <div class="item-row">
           <div class="item-icon">☁️</div>
           <div class="item-content">
-            <strong>Backup opcional no Google Drive</strong>
-            <span>
-              Se você optar por ativar o backup, os dados são enviados para a pasta privada
-              <code>appDataFolder</code> da sua própria conta Google Drive.
-              Essa pasta é invisível para outros aplicativos e acessível apenas pelo AutoLog
-              e por você diretamente nas configurações do Google.
-            </span>
-            <div class="highlight-box">
-              <strong>Importante:</strong> Leonardo Lourenço (desenvolvedor) não tem acesso
-              ao conteúdo do seu Google Drive. Os dados vão diretamente da sua conta para
-              a sua pasta — não passam por nenhum servidor intermediário.
-            </div>
+            <strong>Backup em nuvem</strong>
+            <span>O backup no Google Drive é opcional e ativado apenas por você.</span>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- ── 4. Compartilhamento ────────────────────────────────── -->
-    <section class="section" id="compartilhamento">
-      <p class="section-label">Seção 4</p>
-      <h2>Compartilhamento de Dados</h2>
-
-      <div class="card">
-        <div class="card-body">
-          <p>
-            <strong>Não compartilhamos, vendemos, alugamos ou monetizamos seus dados de nenhuma forma.</strong>
-          </p>
-          <p>
-            Os seus dados pessoais não são transmitidos a terceiros, parceiros, anunciantes
-            ou qualquer outra parte. O AutoLog não exibe publicidade e não possui integrações
-            com plataformas de marketing ou rastreamento.
-          </p>
-          <p>
-            A única transferência de dados que ocorre é o backup opcional para o seu próprio
-            Google Drive (descrito na Seção 3), iniciado exclusivamente pelo usuário.
-          </p>
+        <div class="item-row">
+          <div class="item-icon">📤</div>
+          <div class="item-content">
+            <strong>Exportações periódicas</strong>
+            <span>Recomendamos realizar exportações periódicas pelo menu de configurações como cópia de segurança.</span>
+            <div class="highlight-box">
+              <strong>Atenção:</strong> a desinstalação do app ou a limpeza de dados do dispositivo
+              pode resultar em perda das informações armazenadas localmente.
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ── 6. Seus Direitos ───────────────────────────────────── -->
-    <section class="section" id="direitos">
-      <p class="section-label">Seção 5</p>
-      <h2>Seus Direitos</h2>
+    <!-- ── 3. Assinatura Pro ──────────────────────────────────── -->
+    <section class="section" id="assinatura-pro">
+      <p class="section-label">Seção 3</p>
+      <h2>Assinatura AutoLog Pro</h2>
 
       <div class="card">
         <div class="rights-grid">
 
           <div class="rights-item">
-            <span class="rights-icon">📤</span>
+            <span class="rights-icon">💳</span>
             <div>
-              <strong>Exportar seus dados</strong>
-              <p>Exporte todo o seu histórico em formato PDF ou Excel diretamente pelo app, a qualquer momento, sem precisar de conexão com a internet.</p>
+              <strong>Cobrança recorrente</strong>
+              <p>O plano Pro é uma assinatura com cobrança recorrente processada pela Google Play ou App Store.</p>
             </div>
           </div>
 
           <div class="rights-item">
-            <span class="rights-icon">🗑️</span>
+            <span class="rights-icon">🎁</span>
             <div>
-              <strong>Excluir seus dados</strong>
-              <p>Apague veículos, registros individuais ou todos os dados de uma vez nas Configurações do app. Desinstalar o app também remove todos os dados locais.</p>
+              <strong>Período de teste gratuito</strong>
+              <p>Quando disponível, o trial converte-se automaticamente em assinatura paga ao término, salvo cancelamento antes do fim do período.</p>
             </div>
           </div>
 
           <div class="rights-item">
-            <span class="rights-icon">🔌</span>
+            <span class="rights-icon">↩️</span>
             <div>
-              <strong>Revogar acesso ao Google Drive</strong>
-              <p>Desconecte o backup do Google Drive a qualquer momento em Configurações → Backup. Você também pode revogar o acesso diretamente em <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style="color: var(--amber);">myaccount.google.com/permissions</a>.</p>
+              <strong>Reembolsos</strong>
+              <p>Seguem a política da respectiva loja de aplicativos — Google Play ou App Store.</p>
             </div>
           </div>
 
           <div class="rights-item">
-            <span class="rights-icon">📩</span>
+            <span class="rights-icon">🔓</span>
             <div>
-              <strong>Suporte</strong>
-              <p>Como todos os dados são armazenados exclusivamente no seu dispositivo, a exclusão é feita diretamente pelo app em <strong>Configurações → Zona de Perigo.</strong> O desenvolvedor não tem acesso aos seus dados.</p>
-              <p style="margin-top:0.5rem">Para dúvidas ou suporte sobre o funcionamento do app, responderemos em até 5 dias úteis.</p>
+              <strong>Cancelamento</strong>
+              <p>O cancelamento mantém o acesso Pro até o fim do período já pago. Após isso, as funcionalidades exclusivas do Pro ficam indisponíveis, mas <strong>todos os seus dados permanecem acessíveis.</strong></p>
+            </div>
+          </div>
+
+          <div class="rights-item">
+            <span class="rights-icon">📢</span>
+            <div>
+              <strong>Alterações de preço</strong>
+              <p>Eventuais alterações de preço ou benefícios serão comunicadas com antecedência mínima de 30 dias.</p>
             </div>
           </div>
 
@@ -610,64 +534,87 @@
       </div>
     </section>
 
-    <!-- ── 7. Menores ─────────────────────────────────────────── -->
-    <section class="section" id="menores">
-      <p class="section-label">Seção 6</p>
-      <h2>Crianças e Menores de Idade</h2>
+    <!-- ── 4. Compromisso com a qualidade ────────────────────── -->
+    <section class="section" id="qualidade">
+      <p class="section-label">Seção 4</p>
+      <h2>Compromisso com a Qualidade</h2>
 
       <div class="card">
         <div class="card-body">
           <p>
-            O AutoLog <strong>não é destinado a crianças menores de 13 anos</strong> e não coleta
-            intencionalmente dados pessoais de menores de idade.
+            Trabalhamos continuamente para manter o AutoLog estável, seguro e em evolução.
+            Em caso de problemas, dúvidas ou sugestões, entre em contato pelo suporte —
+            <strong>respondemos a todos.</strong>
           </p>
           <p>
-            Como todos os dados ficam exclusivamente no dispositivo, nenhuma informação é transmitida
-            ao desenvolvedor. Caso o app tenha sido instalado por um menor, basta desinstalar o
-            aplicativo para remover todos os dados.
+            Recomendamos manter o app atualizado para aproveitar correções e melhorias.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ── 8. Alterações ──────────────────────────────────────── -->
+    <!-- ── 5. Autoria ─────────────────────────────────────────── -->
+    <section class="section" id="autoria">
+      <p class="section-label">Seção 5</p>
+      <h2>Autoria e Uso do Aplicativo</h2>
+
+      <div class="card">
+        <div class="card-body">
+          <p>
+            O código-fonte, design e conteúdo do AutoLog são de autoria de
+            <strong>Leonardo Lourenco.</strong>
+          </p>
+          <p>
+            É proibido copiar, redistribuir ou criar produtos derivados sem autorização prévia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 6. Alterações ─────────────────────────────────────── -->
     <section class="section" id="alteracoes">
-      <p class="section-label">Seção 7</p>
-      <h2>Alterações nesta Política</h2>
+      <p class="section-label">Seção 6</p>
+      <h2>Alterações nestes Termos</h2>
 
       <div class="card">
         <div class="card-body">
           <p>
-            Podemos atualizar esta Política de Privacidade periodicamente. Alterações relevantes
-            serão comunicadas por meio das notas de atualização do app na Google Play Store.
+            Podemos atualizar estes Termos quando necessário. Alterações relevantes serão
+            comunicadas via atualização do app.
           </p>
           <p>
-            A versão mais recente estará sempre disponível em
-            <strong>https://7leooel7.github.io/autolog-privacy</strong>. A data de vigência da versão atual está
-            indicada no topo desta página.
-          </p>
-          <p>
-            O uso continuado do aplicativo após a publicação de alterações implica a aceitação
-            da política atualizada. Caso não concorde com as alterações, você pode excluir
-            seus dados e desinstalar o aplicativo.
+            O uso continuado após a comunicação implica aceitação dos termos atualizados.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ── 9. Contato ─────────────────────────────────────────── -->
+    <!-- ── 7. Lei aplicável ───────────────────────────────────── -->
+    <section class="section" id="lei-aplicavel">
+      <p class="section-label">Seção 7</p>
+      <h2>Lei Aplicável</h2>
+
+      <div class="card">
+        <div class="card-body">
+          <p>
+            Estes Termos são regidos pelas leis brasileiras. Fica eleito o foro da comarca de
+            <strong>João Pessoa/PB</strong> para resolução de eventuais conflitos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 8. Contato ─────────────────────────────────────────── -->
     <section class="section" id="contato">
       <p class="section-label">Seção 8</p>
-      <h2>Contato</h2>
+      <h2>Contato e Suporte</h2>
 
       <div class="card">
         <div class="item-row">
           <div class="item-icon">✉️</div>
           <div class="item-content">
             <strong>E-mail de suporte</strong>
-            <span>
-              Para dúvidas ou suporte sobre o funcionamento do app, entre em contato:
-            </span>
+            <span>Dúvidas, sugestões ou solicitações relacionadas a estes Termos:</span>
             <div style="margin-top: 0.6rem;">
               <a href="mailto:support.autolog@gmail.com" class="contact-link">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -681,7 +628,7 @@
           <div class="item-icon">👤</div>
           <div class="item-content">
             <strong>Responsável</strong>
-            <span>Leonardo Lourenço — Desenvolvedor independente</span>
+            <span>Leonardo Lourenco — Desenvolvedor independente</span>
           </div>
         </div>
       </div>
@@ -695,11 +642,14 @@
       <div class="footer-logo">Auto<span>Log</span></div>
       <p>
         Seu carro. Seu histórico. Seu controle.<br />
-        Última atualização: 05 de abril de 2026
+        Última atualização: 11 de abril de 2026
       </p>
       <p style="margin-top: 0.5rem;">
-        © 2026 Leonardo Lourenço &nbsp;·&nbsp;
+        © 2026 Leonardo Lourenco &nbsp;·&nbsp;
         <a href="mailto:support.autolog@gmail.com">support.autolog@gmail.com</a>
+      </p>
+      <p style="margin-top: 0.5rem;">
+        <a href="./index.html">← Política de Privacidade</a>
       </p>
     </div>
   </footer>
