@@ -40,6 +40,27 @@
       }
     }
 
+    /* ?theme= URL param tem prioridade máxima sobre prefers-color-scheme.
+       html[data-theme] (especificidade 0,1,1) bate :root em media query (0,1,0). */
+    html[data-theme="light"] {
+      --bg:         #F5F5F5;
+      --surface:    #FFFFFF;
+      --surface2:   #F0F0F0;
+      --border:     rgba(0,0,0,0.09);
+      --text:       #111111;
+      --text-muted: #666666;
+      --text-sub:   #444444;
+    }
+    html[data-theme="dark"] {
+      --bg:          #0A0A0A;
+      --surface:     #111111;
+      --surface2:    #1A1A1A;
+      --border:      rgba(255,255,255,0.08);
+      --text:        #F5F5F5;
+      --text-muted:  #888888;
+      --text-sub:    #AAAAAA;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -392,6 +413,14 @@
       #back-to-top { bottom: 1rem; right: 1rem; }
     }
   </style>
+  <script>
+    /* Aplica data-theme ANTES do primeiro paint — evita flash de tema errado.
+       Se ?theme= estiver ausente, deixa o @media (prefers-color-scheme) agir. */
+    (function () {
+      var t = new URLSearchParams(window.location.search).get('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+    })();
+  </script>
 </head>
 <body>
 
@@ -638,12 +667,13 @@
       btn.classList.toggle('visible', window.scrollY > 300);
     }, { passive: true });
 
-    // Lê ?theme= passado pelo app e aplica logo correto
-    const urlTheme = new URLSearchParams(window.location.search).get('theme');
-    if (urlTheme === 'dark') {
-      const logo = document.getElementById('app-logo');
-      if (logo) logo.src = './pwa-512x512.png';
-    }
+    // Logo: usa data-theme (definido pelo script do <head>) ou detecta sistema como fallback
+    (function () {
+      var t = document.documentElement.dataset.theme;
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      var logo = document.getElementById('app-logo');
+      if (logo) logo.src = t === 'dark' ? './pwa-512x512.png' : './logo.png';
+    })();
   </script>
 
 </body>
