@@ -399,7 +399,7 @@
   <header>
     <div class="container">
       <div class="header-inner">
-        <img src="./logo.png" alt="AutoLog" class="app-logo" />
+        <img id="app-logo" src="./logo.png" alt="AutoLog" class="app-logo" />
         <div class="header-text">
           <h1>AutoLog</h1>
           <p>Seu carro. Seu histórico. Seu controle.</p>
@@ -637,6 +637,13 @@
     window.addEventListener('scroll', () => {
       btn.classList.toggle('visible', window.scrollY > 300);
     }, { passive: true });
+
+    // Lê ?theme= passado pelo app e aplica logo correto
+    const urlTheme = new URLSearchParams(window.location.search).get('theme');
+    if (urlTheme === 'dark') {
+      const logo = document.getElementById('app-logo');
+      if (logo) logo.src = './pwa-512x512.png';
+    }
   </script>
 
 </body>
